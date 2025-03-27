@@ -20,6 +20,21 @@ body {
     border-radius: 30px;
 }
 
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#current-day-title {
+    margin-top: 0;
+}
+
+.weather-display {
+    background-color: white;
+}
+
 footer {
     background-image: linear-gradient(to bottom, #004265, #002d4e);
     padding: 20px;
