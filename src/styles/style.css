@@ -43,6 +43,13 @@ body {
     padding: 10px;
 }
 
+.forecast-day {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
 #forecast {
     display: flex;
 }
