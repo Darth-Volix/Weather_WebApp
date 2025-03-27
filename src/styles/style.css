@@ -1,0 +1,120 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    padding: 10px;
+}
+
+#content {
+    margin: 0 auto;
+    background-color: lightgray;
+    max-width: 1500px;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+#title-nav-bar {
+    background-image: linear-gradient(to bottom, #004265, #002d4e);
+    padding: 20px;
+    color: white;
+    border-radius: 30px;
+    font-size: 25px;
+    display: flex; 
+}
+
+#website-title-container {
+    display: flex;
+    margin: 0 auto; 
+}
+
+#title-icon {
+    width: 75px;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+#current-day {
+    justify-self: center;
+}
+
+#current-day-title {
+    margin-top: 0;
+}
+
+.weather-display {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.forecast-day {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#form-container {
+    width: auto;
+    margin: 0 auto;
+    text-align: left;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    background-color: #F5F5F5;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-image: linear-gradient(to bottom, #004265, #002d4e);
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 30px;
+}
+
+@media screen and (min-width: 800px) {
+    #forecast {
+        display: flex;
+    }
+
+    #form-container {
+        width: 600px;
+    }
+    
+}
