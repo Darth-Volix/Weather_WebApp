@@ -60,6 +60,38 @@ body {
     margin: 5px;
 }
 
+#form-container {
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
 footer {
     background-image: linear-gradient(to bottom, #004265, #002d4e);
     padding: 20px;
@@ -75,4 +107,9 @@ footer {
     #forecast {
         display: flex;
     }
+
+    #form-container {
+        width: 600px;
+    }
+    
 }
