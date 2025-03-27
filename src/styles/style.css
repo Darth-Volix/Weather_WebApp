@@ -12,3 +12,10 @@ body {
     border-radius: 30px;
     padding: 10px;
 }
+
+#title-nav-bar {
+    background-image: linear-gradient(to bottom, #004265, #002d4e);
+    padding: 20px;
+    color: white;
+    border-radius: 30px;
+}
