@@ -19,6 +19,16 @@ body {
     color: white;
     border-radius: 30px;
     font-size: 25px;
+    display: flex; 
+}
+
+#website-title-container {
+    display: flex;
+    margin: 0 auto; 
+}
+
+#title-icon {
+    width: 75px;
 }
 
 #main-container {
@@ -50,10 +60,6 @@ body {
     margin: 5px;
 }
 
-#forecast {
-    display: flex;
-}
-
 footer {
     background-image: linear-gradient(to bottom, #004265, #002d4e);
     padding: 20px;
@@ -63,4 +69,10 @@ footer {
     align-items: center;
     justify-content: space-around;
     border-radius: 30px;
+}
+
+@media screen and (min-width: 800px) {
+    #forecast {
+        display: flex;
+    }
 }
