@@ -71,6 +71,16 @@ body {
     background-color: white;
 }
 
+#recent-searches {
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#recent-searches h3 {
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
 label {
     font-weight: bold;
 }
