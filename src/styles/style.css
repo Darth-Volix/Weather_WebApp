@@ -45,7 +45,7 @@ body {
 }
 
 #current-day-title {
-    margin-top: 0;
+  text-align: center;
 }
 
 .weather-display {
@@ -73,6 +73,72 @@ body {
     border-radius: 5px;
     margin: 5px;
     width: 50%;
+}
+
+.thunderstorm {
+    background-color: #324162; 
+    color: white;
+}
+
+.drizzle {
+    background-color: #ACC8E5; 
+    color: #112A46;
+}
+
+.rain {
+    background-color: #A1B5D4; 
+}
+
+.snow {
+    background-color: #eaf6f6; 
+}
+
+.clear {
+    background-color: #87ceeb; 
+}
+
+.clouds {
+    background-color: #b0c4de;
+}
+
+.mist {
+    background-color: #d3d3d3; 
+}
+
+.smoke {
+    background-color: #555555; 
+    color: white;
+}
+
+.haze {
+    background-color: #B6B691; 
+}
+
+.dust {
+    background-color: #e1c16e; 
+}
+
+.fog {
+    background-color: #c0c0c0; 
+}
+
+.sand {
+    background-color: #deb887; 
+}
+
+.ash {
+    background-color: #424242; 
+    color: white;
+}
+
+.squall {
+    background-color: #2A4646;
+    color: white;
+}
+
+.tornado {
+    background-color: #4b4b4b; 
+    color: white;
 }
 
 #form-container {
