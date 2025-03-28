@@ -41,6 +41,7 @@ body {
 
 #current-day {
     justify-self: center;
+    width: 50%;
 }
 
 #current-day-title {
@@ -52,6 +53,18 @@ body {
     border: 2px solid black;
     border-radius: 30px;
     padding: 10px;
+    width: 95%;
+    max-width: 1000px;
+}
+
+#five-day-title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#forecast {
+    width: 100%;
+    justify-items: center;
 }
 
 .forecast-day {
@@ -59,6 +72,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     margin: 5px;
+    width: 50%;
 }
 
 #form-container {
