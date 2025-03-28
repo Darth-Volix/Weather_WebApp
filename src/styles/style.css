@@ -71,9 +71,19 @@ body {
     background-color: white;
 }
 
+#search-interfaces {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #recent-searches {
     padding: 10px;
     margin: 0 auto;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 30px;
+    
 }
 
 #recent-searches h3 {
@@ -118,6 +128,10 @@ footer {
     border-radius: 30px;
 }
 
+footer a {
+    color: white;
+}
+
 @media screen and (min-width: 800px) {
     #forecast {
         display: flex;
@@ -126,5 +140,8 @@ footer {
     #form-container {
         width: 600px;
     }
-    
+
+    #search-interfaces {
+        flex-direction: row;
+    }
 }
