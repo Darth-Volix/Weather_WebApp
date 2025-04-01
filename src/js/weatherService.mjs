@@ -1,0 +1,1 @@
+const apiKey = import.meta.env.VITE_ACCUWEATHER_API_KEY;
