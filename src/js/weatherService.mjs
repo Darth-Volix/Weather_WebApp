@@ -6,28 +6,41 @@ const baseURLPostalCode = "http://dataservice.accuweather.com/locations/v1/posta
 const baseURLCurrentConditions = "http://dataservice.accuweather.com/currentconditions/v1/";
 
 // Function to fetch data.
-async function getJSON(url) {
-    // Set up the request options for the fetch call, including the HTTP method and API key in the headers.
+async function getData(url) {
     const options = {
-      method: "GET", // HTTP method to retrieve data
+      method: "GET", 
       headers: {
         "X-Api-Key": apiKey // Provide the API key for authentication
       }
     };
   
-    let data = null; // Variable to hold the data
+    let data = null; 
   
-    // Fetch data from the APIs.
     const response = await fetch(baseURL + url, options);
   
     if (response.ok) {
-      // If the response is successful, parse the JSON data from the response.
       data = await response.json();
     } else {
-      // If the response is not successful, log an error message.
       console.log("Response not OK");
     }
   
-    // Return the data from the API response.
     return data;
+}
+
+// Function to process API data and find the Location Key
+function findLocationKey(locationData, cityName, cityState) {
+    const result = locationData.find(item => item.LocalizedName === cityName && item.AdministrativeArea.LocalizedName === cityState);
+
+    // If a matching item is found, return the Location Key. Otherwise return null.
+    return result ? result.Key : null;
+}
+
+// Function to get location key based on postal code
+async function getLocationKey(cityName, cityState, postalCode) {
+    const url = "&q=" + postalCode;
+    const locationData = await getData(url);
+
+    const result = findLocationKey(locationData, cityName, cityState);
+
+    return result;
 }
