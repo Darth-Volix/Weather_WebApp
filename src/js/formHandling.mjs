@@ -1,4 +1,4 @@
-import { getLocationKey, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
+import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
 
 async function handleLocationSubmit(e) {
     e.preventDefault();
@@ -7,7 +7,8 @@ async function handleLocationSubmit(e) {
     const cityState = document.getElementById("cityState").value;
     const postalCode = document.getElementById("postalCode").value;
 
-    const locationKey = await getLocationKey(cityName, cityState, postalCode);
+    const locationData = await getLocationData(postalCode);
+    const locationKey = await getLocationKey(locationData, cityName, cityState);
 
     if (locationKey != null) {
         const currentWeather = await getCurrentWeather(locationKey);

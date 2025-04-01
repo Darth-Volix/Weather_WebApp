@@ -19,17 +19,17 @@ async function getData(url) {
 }
 
 // Function to process API data and find the Location Key
-function findLocationKey(locationData, cityName, cityState) {
+export function getLocationKey(locationData, cityName, cityState) {
     const result = locationData.find(item => item.LocalizedName === cityName && item.AdministrativeArea.LocalizedName === cityState);
     return result ? result.Key : null;
 }
 
 // Function to get location key based on postal code
-export async function getLocationKey(cityName, cityState, postalCode) {
+export async function getLocationData(postalCode) {
     const url = `${baseURLPostalCode}q=${postalCode}`;
     const locationData = await getData(url);
 
-    return findLocationKey(locationData, cityName, cityState);
+    return locationData;
 }
 
 // Function to get the current weather condition data
