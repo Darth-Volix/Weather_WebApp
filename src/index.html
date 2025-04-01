@@ -18,8 +18,59 @@
         </div>
       </header>
       <main id="main-container">
-        <div class="weather-display">
-          <!--Filled in by JavaScript-->
+        <div id="weather-display-container" class="weather-display">
+          <div id="current-day" class="forecast-day clear">
+            <h2 id="current-day-title">Today's Weather - Rexburg</h2>
+            <p>Current Temperature: <span id="current-temp">68°F</span></p>
+            <p>High: <span id="current-high">74°F</span></p>
+            <p>Low: <span id="current-low">58°F</span></p>
+            <p>Condition: <span id="current-condition">Sunny</span></p>
+            <p>Wind: <span id="wind-speed">10 mph</span></p>
+            <p>Wind Direction: <span id="wind-direction">NE</span></p>
+          </div>
+          <h2 id="five-day-title">5-Day Forecast</h2>
+          <div id="forecast">
+            <div class="forecast-day clouds">
+              <p><span>Monday</span></p>
+              <div class="day-temp">
+                <p>High: <span>74°F</span></p>
+                <p>Low: <span>58°F</span></p>
+              </div>
+              <p><span>Cloudy</span></p>
+            </div>
+            <div class="forecast-day clear">
+              <p><span>Tuesday</span></p>
+              <div class="day-temp">
+                <p>High: <span>78°F</span></p>
+                <p>Low: <span>60°F</span></p>
+              </div>
+              <p><span>Sunny</span></p>
+            </div>
+            <div class="forecast-day rain">
+              <p><span>Wednesday</span></p>
+              <div class="day-temp">
+                <p>High: <span>68°F</span></p>
+                <p>Low: <span>50°F</span></p>
+              </div>
+              <p><span>Rainy</span></p>
+            </div>
+            <div class="forecast-day dust">
+              <p><span>Thursday</span></p>
+              <div class="day-temp">
+                <p>High: <span>72°F</span></p>
+                <p>Low: <span>55°F</span></p>
+              </div>
+              <p><span>Dust</span></p>
+            </div>
+            <div class="forecast-day snow">
+              <p><span>Friday</span></p>
+              <div class="day-temp">
+                <p>High: <span>70°F</span></p>
+                <p>Low: <span>58°F</span></p>
+              </div>
+              <p><span>Snow</span></p>
+            </div>
+          </div>
         </div>
         <section id="search-interfaces">
           <div id="form-container">
