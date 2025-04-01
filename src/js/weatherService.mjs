@@ -2,9 +2,9 @@
 const apiKey = import.meta.env.VITE_ACCUWEATHER_API_KEY;
 
 // API Base URLs with `apikey` as a query parameter
-const baseURLPostalCode = `http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${apiKey}&`;
-const baseURLCurrentConditions = "http://dataservice.accuweather.com/currentconditions/v1/";
-const baseURLFiveDayForecast = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/";
+const baseURLPostalCode = `https://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${apiKey}&`;
+const baseURLCurrentConditions = "https://dataservice.accuweather.com/currentconditions/v1/";
+const baseURLFiveDayForecast = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/";
 
 // Function to fetch data
 async function getData(url) {
