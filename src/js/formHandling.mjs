@@ -21,9 +21,11 @@ async function handleLocationSubmit(e) {
 }
 
 export function initializeFormHandling() {
+    const realLocationForm = document.getElementById("real-location-form");
+
     // Remove event listeners to prevent memory leaking 
-    document.getElementById("location-submit").removeEventListener("submit", handleLocationSubmit);
+    realLocationForm.removeEventListener("submit", handleLocationSubmit);
 
     // Add event listeners
-    document.getElementById("location-submit").addEventListener("submit", handleLocationSubmit);
+    realLocationForm.addEventListener("submit", handleLocationSubmit);
 }

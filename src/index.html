@@ -7,7 +7,7 @@
     <meta name="author" content="Nicholas Wilkins"/>
     <title>RainCheck</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="../src/js/main.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
   </head>
   <body>
     <section id="content">
@@ -75,7 +75,7 @@
         <section id="search-interfaces">
           <div id="form-container">
             <h3>Fill out Location Information</h3>
-            <form action="/submit-location" method="POST">
+            <form id="real-location-form">
               <label for="city">City:</label>
               <input id="cityName" type="text" id="city" name="city" required>
               <br><br>
