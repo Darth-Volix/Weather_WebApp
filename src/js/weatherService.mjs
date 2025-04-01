@@ -4,7 +4,7 @@ const apiKey = import.meta.env.VITE_ACCUWEATHER_API_KEY;
 // API Base URLs
 const baseURLPostalCode = "http://dataservice.accuweather.com/locations/v1/postalcodes/search?";
 const baseURLCurrentConditions = "http://dataservice.accuweather.com/currentconditions/v1/";
-
+const baseURLFiveDayForecast = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/";
 
 // Function to fetch data.
 async function getData(url) {
@@ -52,4 +52,12 @@ async function getCurrentWeather(locationKey) {
     const currentWeatherData = await getData(url);
 
     return currentWeatherData;
+}
+
+// Function to get the 5-Day weather forecast for the location
+async function getFiveDayForecast(locationKey) {
+    const url = baseURLFiveDayForecast + locationKey + "?";
+    const fiveDayData = await getData(url);
+
+    return fiveDayData;
 }
