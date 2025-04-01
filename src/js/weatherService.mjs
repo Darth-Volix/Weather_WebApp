@@ -37,7 +37,7 @@ function findLocationKey(locationData, cityName, cityState) {
 }
 
 // Function to get location key based on postal code
-async function getLocationKey(cityName, cityState, postalCode) {
+export async function getLocationKey(cityName, cityState, postalCode) {
     const url = baseURLPostalCode + "&q=" + postalCode;
     const locationData = await getData(url);
 
@@ -47,7 +47,7 @@ async function getLocationKey(cityName, cityState, postalCode) {
 }
 
 // Function to get the current weather condition data
-async function getCurrentWeather(locationKey) {
+export async function getCurrentWeather(locationKey) {
     const url = baseURLCurrentConditions + locationKey + "?&details=true";
     const currentWeatherData = await getData(url);
 
@@ -55,7 +55,7 @@ async function getCurrentWeather(locationKey) {
 }
 
 // Function to get the 5-Day weather forecast for the location
-async function getFiveDayForecast(locationKey) {
+export async function getFiveDayForecast(locationKey) {
     const url = baseURLFiveDayForecast + locationKey + "?";
     const fiveDayData = await getData(url);
 
