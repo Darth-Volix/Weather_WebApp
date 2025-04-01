@@ -7,7 +7,7 @@
     <meta name="author" content="Nicholas Wilkins"/>
     <title>RainCheck</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="../src/js/main.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
   </head>
   <body>
     <section id="content">
@@ -18,7 +18,7 @@
         </div>
       </header>
       <main id="main-container">
-        <div class="weather-display">
+        <div id="weather-display-container" class="weather-display">
           <div id="current-day" class="forecast-day clear">
             <h2 id="current-day-title">Today's Weather - Rexburg</h2>
             <p>Current Temperature: <span id="current-temp">68°F</span></p>
@@ -75,17 +75,17 @@
         <section id="search-interfaces">
           <div id="form-container">
             <h3>Fill out Location Information</h3>
-            <form action="/submit-location" method="POST">
+            <form id="real-location-form">
               <label for="city">City:</label>
-              <input type="text" id="city" name="city" required>
+              <input id="cityName" type="text" id="city" name="city" required>
               <br><br>
               <label for="state">State:</label>
-              <input type="text" id="state" name="state" required>
+              <input id="cityState" type="text" id="state" name="state" required>
               <br><br>
               <label for="zip">Zip Code:</label>
-              <input type="text" id="zip" name="zip" required>
+              <input id="postalCode" type="text" id="zip" name="zip" required>
               <br><br>
-              <button type="submit">Submit</button>
+              <button id="location-submit" type="submit">Submit</button>
             </form>
             <h4>OR</h4>
             <form>
