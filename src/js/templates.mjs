@@ -25,6 +25,11 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
     `;
 }
 
+// Recent Searches to be added and displayed by JavaScript
+export function recentSearchesTemplate(cityName, cityState, postalCode) {
+  
+}
+
 // Convert Datestring from API to user-friendly text
 function convertDate(dateString) {
     const date = new Date(dateString);
