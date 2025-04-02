@@ -1,0 +1,43 @@
+{
+    "current_day": {
+      "title": "Hoth",
+      "temperature": "5",
+      "high": "12",
+      "low": "-3",
+      "condition": "Blizzard",
+      "wind_speed": "35",
+      "wind_direction": "NW"
+    },
+    "five_day_forecast": [
+      {
+        "day": "Monday",
+        "high": "10",
+        "low": "2",
+        "condition": "Blizzard"
+      },
+      {
+        "day": "Tuesday",
+        "high": "12",
+        "low": "5",
+        "condition": "Snow"
+      },
+      {
+        "day": "Wednesday",
+        "high": "9",
+        "low": "1",
+        "condition": "Blizzard"
+      },
+      {
+        "day": "Thursday",
+        "high": "7",
+        "low": "-2",
+        "condition": "Snow"
+      },
+      {
+        "day": "Friday",
+        "high": "11",
+        "low": "3",
+        "condition": "Blizzard"
+      }
+    ]
+  }

@@ -25,6 +25,11 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
   `;
 }
 
+// Function to display weather data for a fictional location
+export function weatherDisplayFictionalTemplate(loactionJSONData) {
+
+}
+
 // Recent Searches to be added and displayed by JavaScript
 export function recentSearchesTemplate(recentSearches) {
   return `
