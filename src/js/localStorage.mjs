@@ -1,6 +1,6 @@
 import { recentSearchesTemplate } from "./templates.mjs";
 
-function addToLocalStorage(cityName, cityState, postalCode) {
+export function addToLocalStorage(cityName, cityState, postalCode) {
     // If recentSearches does not exist, create it 
     if (!localStorage.getItem("recentSearches")) {
         localStorage.setItem("recentSearches", JSON.stringify([]));
@@ -11,6 +11,11 @@ function addToLocalStorage(cityName, cityState, postalCode) {
 
     // Add the subarray
     addSubArray(searchQuery);
+
+    const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
+    const recentSearchesContainer = document.getElementById("recent-searches");
+
+    recentSearchesContainer.innerHTML = recentSearchesTemplate(recentSearches);
 }
 
 function addSubArray(searchQuery) {
@@ -30,14 +35,8 @@ function addSubArray(searchQuery) {
 
     // Save back to localStorage
     localStorage.setItem("recentSearches", JSON.stringify(mainArray));
-
-    return;
 }
 
 function searchForSubArray(mainArray, searchQuery) {
     return mainArray.some(arr => JSON.stringify(arr) === JSON.stringify(searchQuery));
-}
-
-function displayRecentSearches() {
-
 }
