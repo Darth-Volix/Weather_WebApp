@@ -45,7 +45,7 @@ function searchForSubArray(mainArray, searchQuery) {
 
 // Display the recent searches 
 export function displayRecentSearches() {
-    if (!localStorage.getItem("recentSearches")) {
+    if (localStorage.getItem("recentSearches")) {
         const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
         const recentSearchesContainer = document.getElementById("recent-searches-list");
         recentSearchesContainer.innerHTML = recentSearchesTemplate(recentSearches);
