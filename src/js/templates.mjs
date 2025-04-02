@@ -2,7 +2,7 @@
 export function weatherDisplayTemplate(cityName, cityState, currentWeather, fiveDayForecast) {
   return `
     <div id="current-day" class="forecast-day ${currentWeather[0].WeatherText}">
-      <h2 id="current-day-title">Today's Weather - ${cityName}, ${cityState}}</h2>
+      <h2 id="current-day-title">Today's Weather - ${cityName}, ${cityState}</h2>
       <p>Current Temperature: <span id="current-temp">${currentWeather[0].Temperature.Imperial.Value} °F</span></p>
       <p>High: <span id="current-high">${fiveDayForecast.DailyForecasts[0].Temperature.Maximum.Value} °F</span></p>
       <p>Low: <span id="current-low">${fiveDayForecast.DailyForecasts[0].Temperature.Minimum.Value} °F</span></p>
