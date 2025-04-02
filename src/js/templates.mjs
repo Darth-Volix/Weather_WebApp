@@ -7,7 +7,7 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
       <p>High: <span id="current-high">${fiveDayForecast.DailyForecasts[0].Temperature.Maximum.Value} °F</span></p>
       <p>Low: <span id="current-low">${fiveDayForecast.DailyForecasts[0].Temperature.Minimum.Value} °F</span></p>
       <p>Condition: <span id="current-condition">${currentWeather[0].WeatherText}</span></p>
-      <p>Wind: <span id="wind-speed">${currentWeather[0].Wind.Speed.Imperial.Value}mph ${currentWeather[0].Wind.Direction.English}</span></p>
+      <p>Wind: <span id="wind-speed">${currentWeather[0].Wind.Speed.Imperial.Value} mph ${currentWeather[0].Wind.Direction.English}</span></p>
     </div>
     <h2 id="five-day-title">5-Day Forecast</h2>
     <div id="forecast">
@@ -28,11 +28,9 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
 // Recent Searches to be added and displayed by JavaScript
 export function recentSearchesTemplate(recentSearches) {
   return `
-    <ul id="recent-searches-list">
-      ${recentSearches.map( search => `
-        <li>${search[0]}, ${search[1]} ${search[2]}</li>
-        `).join('')}
-    </ul>`;
+    ${recentSearches.map( search => `
+      <li>${search[0]}, ${search[1]} ${search[2]}</li>
+      `).join('')}`;
 }
 
 // Convert Datestring from API to user-friendly text
