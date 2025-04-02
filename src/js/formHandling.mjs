@@ -1,5 +1,6 @@
 import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
 import { weatherDisplayTemplate } from "./templates.mjs";
+import { addToLocalStorage } from "./localStorage.mjs";
 
 async function handleLocationSubmit(e) {
     e.preventDefault();
@@ -20,6 +21,7 @@ async function handleLocationSubmit(e) {
         console.log(fiveDayForecast);
 
         weatherDisplayContainer.innerHTML = weatherDisplayTemplate(cityName, cityState, currentWeather, fiveDayForecast);
+        addToLocalStorage(cityName, cityState, postalCode);
     } else {
         console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
     }
