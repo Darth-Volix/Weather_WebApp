@@ -1,33 +1,39 @@
 // Weather Display added dynamically by JavaScript
 export function weatherDisplayTemplate(cityName, cityState, currentWeather, fiveDayForecast) {
-    return `
-      <div id="current-day" class="forecast-day ${currentWeather[0].WeatherText}">
-        <h2 id="current-day-title">Today's Weather - ${cityName}, ${cityState}}</h2>
-        <p>Current Temperature: <span id="current-temp">${currentWeather[0].Temperature.Imperial.Value} °F</span></p>
-        <p>High: <span id="current-high">${fiveDayForecast.DailyForecasts[0].Temperature.Maximum.Value} °F</span></p>
-        <p>Low: <span id="current-low">${fiveDayForecast.DailyForecasts[0].Temperature.Minimum.Value} °F</span></p>
-        <p>Condition: <span id="current-condition">${currentWeather[0].WeatherText}</span></p>
-        <p>Wind: <span id="wind-speed">${currentWeather[0].Wind.Speed.Imperial.Value}mph ${currentWeather[0].Wind.Direction.English}</span></p>
-      </div>
-      <h2 id="five-day-title">5-Day Forecast</h2>
-      <div id="forecast">
-        ${fiveDayForecast.DailyForecasts.map( day => `
-          <div class="forecast-day ">
-            <p><span>${convertDate(day.Date)}</span></p>
-            <div class="day-temp">
-              <p>High: <span>${day.Temperature.Maximum.Value} °F</span></p>
-              <p>Low: <span>${day.Temperature.Minimum.Value} °F</span></p>
-            </div>
-            <p><span>${day.Day.IconPhrase}</span></p>
+  return `
+    <div id="current-day" class="forecast-day ${currentWeather[0].WeatherText}">
+      <h2 id="current-day-title">Today's Weather - ${cityName}, ${cityState}}</h2>
+      <p>Current Temperature: <span id="current-temp">${currentWeather[0].Temperature.Imperial.Value} °F</span></p>
+      <p>High: <span id="current-high">${fiveDayForecast.DailyForecasts[0].Temperature.Maximum.Value} °F</span></p>
+      <p>Low: <span id="current-low">${fiveDayForecast.DailyForecasts[0].Temperature.Minimum.Value} °F</span></p>
+      <p>Condition: <span id="current-condition">${currentWeather[0].WeatherText}</span></p>
+      <p>Wind: <span id="wind-speed">${currentWeather[0].Wind.Speed.Imperial.Value}mph ${currentWeather[0].Wind.Direction.English}</span></p>
+    </div>
+    <h2 id="five-day-title">5-Day Forecast</h2>
+    <div id="forecast">
+      ${fiveDayForecast.DailyForecasts.map( day => `
+        <div class="forecast-day ">
+          <p><span>${convertDate(day.Date)}</span></p>
+          <div class="day-temp">
+            <p>High: <span>${day.Temperature.Maximum.Value} °F</span></p>
+            <p>Low: <span>${day.Temperature.Minimum.Value} °F</span></p>
           </div>
-        `).join('')}
-      </div>
-    `;
+          <p><span>${day.Day.IconPhrase}</span></p>
+        </div>
+      `).join('')}
+    </div>
+  `;
 }
 
 // Recent Searches to be added and displayed by JavaScript
 export function recentSearchesTemplate(cityName, cityState, postalCode) {
-  
+  return `
+    <h3>Recent Searches:</h4>
+    <ul id="recent-searches-list">
+      <li>Rexburg, ID</li>
+      <li>Salt Lake City, Utah</li>
+      <li>Anchroage, Alaska</li>
+    </ul>`;
 }
 
 // Convert Datestring from API to user-friendly text
