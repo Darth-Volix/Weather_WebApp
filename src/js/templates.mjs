@@ -28,7 +28,6 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
 // Recent Searches to be added and displayed by JavaScript
 export function recentSearchesTemplate(recentSearches) {
   return `
-    <h3>Recent Searches:</h4>
     <ul id="recent-searches-list">
       ${recentSearches.map( search => `
         <li>${search[0]}, ${search[1]} ${search[2]}</li>

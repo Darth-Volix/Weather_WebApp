@@ -16,7 +16,7 @@ export function addToLocalStorage(cityName, cityState, postalCode) {
     // Display the recent searches to the user
     const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
     const recentSearchesContainer = document.getElementById("recent-searches");
-    recentSearchesContainer.innerHTML = recentSearchesTemplate(recentSearches);
+    recentSearchesContainer.insertAdjacentHTML("beforeend", recentSearchesTemplate(recentSearches));
 }
 
 
