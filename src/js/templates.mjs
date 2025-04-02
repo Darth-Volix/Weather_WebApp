@@ -26,13 +26,13 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
 }
 
 // Recent Searches to be added and displayed by JavaScript
-export function recentSearchesTemplate(cityName, cityState, postalCode) {
+export function recentSearchesTemplate(recentSearches) {
   return `
     <h3>Recent Searches:</h4>
     <ul id="recent-searches-list">
-      <li>Rexburg, ID</li>
-      <li>Salt Lake City, Utah</li>
-      <li>Anchroage, Alaska</li>
+      ${recentSearches.map( search => `
+        <li>${search[0]}, ${search[1]} ${search[2]}</li>
+        `).join('')}
     </ul>`;
 }
 
