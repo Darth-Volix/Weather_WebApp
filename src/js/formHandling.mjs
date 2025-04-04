@@ -1,4 +1,4 @@
-import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
+import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast, getFictionalData } from "./weatherService.mjs";
 import { weatherDisplayTemplate } from "./templates.mjs";
 import { addToLocalStorage } from "./localStorage.mjs";
 
@@ -27,12 +27,29 @@ async function handleLocationSubmit(e) {
     }
 }
 
+async function handleFictionalLocationSubmit(e) {
+    e.preventDefault();
+
+    const weatherDisplayContainer = document.getElementById("weather-display-container");
+    const ficionalLocation = document.getElementById("dropdown").value;
+
+    const fictionalLocationData = await getFictionalData(ficionalLocation);
+
+    if (fictionalLocationData != null) {
+        console.log(fictionalLocationData);
+    }
+}
+
 export function initializeFormHandling() {
     const realLocationForm = document.getElementById("real-location-form");
+    const fictionalLocationForm = document.getElementById("fictional-location-form");
 
     // Remove event listeners to prevent memory leaking 
     realLocationForm.removeEventListener("submit", handleLocationSubmit);
+    fictionalLocationForm.removeEventListener("submit", handleFictionalLocationSubmit);
+    
 
     // Add event listeners
     realLocationForm.addEventListener("submit", handleLocationSubmit);
+    fictionalLocationForm.addEventListener("submit", handleFictionalLocationSubmit);
 }

@@ -26,7 +26,7 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
 }
 
 // Function to display weather data for a fictional location
-export function weatherDisplayFictionalTemplate(loactionJSONData) {
+export function weatherDisplayFictionalTemplate(fictionalData) {
 
 }
 
