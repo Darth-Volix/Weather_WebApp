@@ -5,7 +5,6 @@ export default defineConfig({
   root: "src/",
 
   build: {
-    assetsInclude: ['**/*.json'],
     outDir: "../dist",
     rollupOptions: {
       input: {

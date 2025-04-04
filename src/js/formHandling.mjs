@@ -1,6 +1,9 @@
-import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast, getFictionalData } from "./weatherService.mjs";
+import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
 import { weatherDisplayTemplate, weatherDisplayFictionalTemplate } from "./templates.mjs";
 import { addToSessionStorage } from "./sessionStorage.mjs";
+import coruscantData from '../json/coruscant.json';
+import hothData from '../json/hoth.json';
+import tatooineData from '../json/tatooine.json';
 
 // Handles real location submission
 async function handleLocationSubmit(e) {
@@ -36,7 +39,7 @@ async function handleFictionalLocationSubmit(e) {
     const weatherDisplayContainer = document.getElementById("weather-display-container");
     const ficionalLocation = document.getElementById("dropdown").value;
 
-    const fictionalLocationData = await getFictionalData(ficionalLocation);
+    const fictionalLocationData = eval(`${ficionalLocation.toLowerCase()}Data`);
 
     if (fictionalLocationData != null) {
         weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
