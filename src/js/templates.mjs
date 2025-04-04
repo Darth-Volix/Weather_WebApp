@@ -26,8 +26,30 @@ export function weatherDisplayTemplate(cityName, cityState, currentWeather, five
 }
 
 // Function to display weather data for a fictional location
-export function weatherDisplayFictionalTemplate(loactionJSONData) {
-
+export function weatherDisplayFictionalTemplate(fictionalData) {
+  return `
+    <div id="current-day" class="forecast-day ${fictionalData.current_day.condition}">
+      <h2 id="current-day-title">Today's Weather - ${fictionalData.current_day.title}</h2>
+      <p>Current Temperature: <span id="current-temp">${fictionalData.current_day.temperature} °F</span></p>
+      <p>High: <span id="current-high">${fictionalData.current_day.high} °F</span></p>
+      <p>Low: <span id="current-low">${fictionalData.current_day.low} °F</span></p>
+      <p>Condition: <span id="current-condition">${fictionalData.current_day.condition}</span></p>
+      <p>Wind: <span id="wind-speed">${fictionalData.current_day.wind_speed} mph ${fictionalData.current_day.wind_direction}</span></p>
+    </div>
+    <h2 id="five-day-title">5-Day Forecast</h2>
+    <div id="forecast">
+      ${fictionalData.five_day_forecast.map( (day, dayNumber) => `
+        <div class="forecast-day ">
+          <p><span>${generateDate(dayNumber + 1)}</span></p>
+          <div class="day-temp">
+            <p>High: <span>${day.high} °F</span></p>
+            <p>Low: <span>${day.low} °F</span></p>
+          </div>
+          <p><span>${day.condition}</span></p>
+        </div>
+      `).join('')}
+    </div>
+  `;
 }
 
 // Recent Searches to be added and displayed by JavaScript
@@ -40,9 +62,20 @@ export function recentSearchesTemplate(recentSearches) {
 
 // Convert Datestring from API to user-friendly text
 function convertDate(dateString) {
-    const date = new Date(dateString);
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const dayOfWeek = daysOfWeek[date.getDay()];
+  const date = new Date(dateString);
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  return dayOfWeek;
+}
 
-    return dayOfWeek;
+// Generate the days of the week for the five day forecast for fictional locations
+function generateDate(dayNumber) {
+  const date = new Date(); // Get the current date
+  date.setDate(date.getDate() + dayNumber); // Add 'index' days to the current date
+
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayOfWeekIndex = date.getDay(); 
+  const dayOfWeek = daysOfWeek[dayOfWeekIndex]
+
+  return dayOfWeek;
 }

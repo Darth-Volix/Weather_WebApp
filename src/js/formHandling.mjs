@@ -1,7 +1,11 @@
 import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast } from "./weatherService.mjs";
-import { weatherDisplayTemplate } from "./templates.mjs";
-import { addToLocalStorage } from "./localStorage.mjs";
+import { weatherDisplayTemplate, weatherDisplayFictionalTemplate } from "./templates.mjs";
+import { addToSessionStorage } from "./sessionStorage.mjs";
+import coruscantData from '../json/coruscant.json';
+import hothData from '../json/hoth.json';
+import tatooineData from '../json/tatooine.json';
 
+// Handles real location submission
 async function handleLocationSubmit(e) {
     e.preventDefault();
 
@@ -21,18 +25,45 @@ async function handleLocationSubmit(e) {
         console.log(fiveDayForecast);
 
         weatherDisplayContainer.innerHTML = weatherDisplayTemplate(cityName, cityState, currentWeather, fiveDayForecast);
-        addToLocalStorage(cityName, cityState, postalCode);
+        addToSessionStorage(cityName, cityState, postalCode);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
         console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
     }
 }
 
+// Handles fictional location submission
+async function handleFictionalLocationSubmit(e) {
+    e.preventDefault();
+
+    const weatherDisplayContainer = document.getElementById("weather-display-container");
+    const fictionalLocation = document.getElementById("dropdown").value;
+
+    let fictionalLocationData = null;
+
+    if (fictionalLocation.toLowerCase() === 'hoth') {
+        fictionalLocationData = hothData;
+    } else if (fictionalLocation.toLowerCase() === 'coruscant') {
+        fictionalLocationData = coruscantData;
+    } else if (fictionalLocation.toLowerCase() === 'tatooine') {
+        fictionalLocationData = tatooineData;
+    }
+    
+    weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Handles the event listeners for the forms
 export function initializeFormHandling() {
     const realLocationForm = document.getElementById("real-location-form");
+    const fictionalLocationForm = document.getElementById("fictional-location-form");
 
     // Remove event listeners to prevent memory leaking 
     realLocationForm.removeEventListener("submit", handleLocationSubmit);
+    fictionalLocationForm.removeEventListener("submit", handleFictionalLocationSubmit);
+    
 
     // Add event listeners
     realLocationForm.addEventListener("submit", handleLocationSubmit);
+    fictionalLocationForm.addEventListener("submit", handleFictionalLocationSubmit);
 }

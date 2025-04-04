@@ -39,6 +39,10 @@ body {
     margin: 20px;
 }
 
+#filler-flag {
+    text-align: center;
+}
+
 #current-day {
     justify-self: center;
     width: 50%;

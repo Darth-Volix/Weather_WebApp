@@ -19,6 +19,7 @@
       </header>
       <main id="main-container">
         <div id="weather-display-container" class="weather-display">
+          <h1 id="filler-flag">*** Filler Data Until Search Is Made ***</h1>
           <div id="current-day" class="forecast-day clear">
             <h2 id="current-day-title">Today's Weather - Rexburg</h2>
             <p>Current Temperature: <span id="current-temp">68°F</span></p>
@@ -88,7 +89,7 @@
               <button id="location-submit" type="submit">Submit</button>
             </form>
             <h4>OR</h4>
-            <form>
+            <form id="fictional-location-form">
               <label for="dropdown">Select Fictional Location:</label>
               <select id="dropdown" name="dropdown">
                 <option value="hoth">Hoth</option>
