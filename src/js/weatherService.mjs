@@ -46,7 +46,7 @@ export async function getFiveDayForecast(locationKey) {
 
 // Function to get Fictional Location data
 export async function getFictionalData(location) {
-    let fictionalURL = `/json/${location.toLowerCase()}.json`;
+    let fictionalURL = `src/json/${location.toLowerCase()}.json`; 
     const fictionalData = await getData(fictionalURL)
   
     return fictionalData;
