@@ -2,10 +2,10 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  assetsInclude: ['**/*.json'],
   root: "src/",
 
   build: {
+    assetsInclude: ['**/*.json'],
     outDir: "../dist",
     rollupOptions: {
       input: {
