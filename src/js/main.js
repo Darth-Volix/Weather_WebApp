@@ -1,5 +1,3 @@
-import { initializeFormHandling } from "./formHandling.mjs";
-import { displayRecentSearches } from "./localStorage.mjs";
+import { init } from "./ui.mjs";
 
-displayRecentSearches();
-initializeFormHandling();
+init();

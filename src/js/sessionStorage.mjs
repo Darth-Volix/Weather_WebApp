@@ -1,10 +1,10 @@
 import { recentSearchesTemplate } from "./templates.mjs";
 
-// Check if recentSearches exists in localStorage, create it if not
-export function addToLocalStorage(cityName, cityState, postalCode) {
+// Check if recentSearches exists in sessionStorage, create it if not
+export function addToSessionStorage(cityName, cityState, postalCode) {
     // If recentSearches does not exist, create it 
-    if (!localStorage.getItem("recentSearches")) {
-        localStorage.setItem("recentSearches", JSON.stringify([]));
+    if (!sessionStorage.getItem("recentSearches")) {
+        sessionStorage.setItem("recentSearches", JSON.stringify([]));
     }
 
     // Create the query subarray
@@ -17,11 +17,10 @@ export function addToLocalStorage(cityName, cityState, postalCode) {
     displayRecentSearches();
 }
 
-
 // Function to add a sub-array to recent searches
 function addSubArray(searchQuery) {
     // Retrieve the main array
-    let mainArray = JSON.parse(localStorage.getItem("recentSearches"));
+    let mainArray = JSON.parse(sessionStorage.getItem("recentSearches"));
 
     // Check if the subarray is already in recent searches
     let subArrayExists = searchForSubArray(mainArray, searchQuery);
@@ -33,10 +32,9 @@ function addSubArray(searchQuery) {
     // Add the sub-array
     mainArray.push(searchQuery);
 
-    // Save back to localStorage
-    localStorage.setItem("recentSearches", JSON.stringify(mainArray));
+    // Save back to sessionStorage
+    sessionStorage.setItem("recentSearches", JSON.stringify(mainArray));
 }
-
 
 // Function to check if a sub-array exists in the main array
 function searchForSubArray(mainArray, searchQuery) {
@@ -45,8 +43,8 @@ function searchForSubArray(mainArray, searchQuery) {
 
 // Display the recent searches 
 export function displayRecentSearches() {
-    if (localStorage.getItem("recentSearches")) {
-        const recentSearches = JSON.parse(localStorage.getItem("recentSearches"));
+    if (sessionStorage.getItem("recentSearches")) {
+        const recentSearches = JSON.parse(sessionStorage.getItem("recentSearches"));
         const recentSearchesContainer = document.getElementById("recent-searches-list");
         recentSearchesContainer.innerHTML = recentSearchesTemplate(recentSearches);
     }

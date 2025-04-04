@@ -1,6 +1,6 @@
 import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast, getFictionalData } from "./weatherService.mjs";
 import { weatherDisplayTemplate, weatherDisplayFictionalTemplate } from "./templates.mjs";
-import { addToLocalStorage } from "./localStorage.mjs";
+import { addToSessionStorage } from "./sessionStorage.mjs";
 
 // Handles real location submission
 async function handleLocationSubmit(e) {
@@ -22,7 +22,8 @@ async function handleLocationSubmit(e) {
         console.log(fiveDayForecast);
 
         weatherDisplayContainer.innerHTML = weatherDisplayTemplate(cityName, cityState, currentWeather, fiveDayForecast);
-        addToLocalStorage(cityName, cityState, postalCode);
+        addToSessionStorage(cityName, cityState, postalCode);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
         console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
     }
@@ -39,8 +40,9 @@ async function handleFictionalLocationSubmit(e) {
 
     if (fictionalLocationData != null) {
         weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
+        window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-        onsole.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
+        console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
     }
 }
 
