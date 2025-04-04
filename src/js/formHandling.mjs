@@ -1,7 +1,8 @@
 import { getLocationKey, getLocationData, getCurrentWeather, getFiveDayForecast, getFictionalData } from "./weatherService.mjs";
-import { weatherDisplayTemplate } from "./templates.mjs";
+import { weatherDisplayTemplate, weatherDisplayFictionalTemplate } from "./templates.mjs";
 import { addToLocalStorage } from "./localStorage.mjs";
 
+// Handles real location submission
 async function handleLocationSubmit(e) {
     e.preventDefault();
 
@@ -27,6 +28,7 @@ async function handleLocationSubmit(e) {
     }
 }
 
+// Handles fictional location submission
 async function handleFictionalLocationSubmit(e) {
     e.preventDefault();
 
@@ -36,10 +38,13 @@ async function handleFictionalLocationSubmit(e) {
     const fictionalLocationData = await getFictionalData(ficionalLocation);
 
     if (fictionalLocationData != null) {
-        console.log(fictionalLocationData);
+        weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
+    } else {
+        onsole.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
     }
 }
 
+// Handles the event listeners for the forms
 export function initializeFormHandling() {
     const realLocationForm = document.getElementById("real-location-form");
     const fictionalLocationForm = document.getElementById("fictional-location-form");
