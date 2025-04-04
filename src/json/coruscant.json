@@ -1,0 +1,43 @@
+{
+    "current_day": {
+      "title": "Coruscant",
+      "temperature": "72",
+      "high": "80",
+      "low": "65",
+      "condition": "Partly Cloudy",
+      "wind_speed": "10",
+      "wind_direction": "E"
+    },
+    "five_day_forecast": [
+      {
+        "day": "Monday",
+        "high": "78",
+        "low": "66",
+        "condition": "Partly Cloudy"
+      },
+      {
+        "day": "Tuesday",
+        "high": "80",
+        "low": "68",
+        "condition": "Sunny"
+      },
+      {
+        "day": "Wednesday",
+        "high": "75",
+        "low": "64",
+        "condition": "Partly Cloudy"
+      },
+      {
+        "day": "Thursday",
+        "high": "79",
+        "low": "67",
+        "condition": "Sunny"
+      },
+      {
+        "day": "Friday",
+        "high": "82",
+        "low": "70",
+        "condition": "Mostly Clear"
+      }
+    ]
+  }
