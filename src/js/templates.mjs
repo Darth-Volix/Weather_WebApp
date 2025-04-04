@@ -38,9 +38,9 @@ export function weatherDisplayFictionalTemplate(fictionalData) {
     </div>
     <h2 id="five-day-title">5-Day Forecast</h2>
     <div id="forecast">
-      ${fictionalData.five_day_forecast.map( day => `
+      ${fictionalData.five_day_forecast.map( (day, dayNumber) => `
         <div class="forecast-day ">
-          <p><span>${day.day}</span></p>
+          <p><span>${generateDate(dayNumber + 1)}</span></p>
           <div class="day-temp">
             <p>High: <span>${day.high} °F</span></p>
             <p>Low: <span>${day.low} °F</span></p>
@@ -62,9 +62,20 @@ export function recentSearchesTemplate(recentSearches) {
 
 // Convert Datestring from API to user-friendly text
 function convertDate(dateString) {
-    const date = new Date(dateString);
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const dayOfWeek = daysOfWeek[date.getDay()];
+  const date = new Date(dateString);
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  return dayOfWeek;
+}
 
-    return dayOfWeek;
+// Generate the days of the week for the five day forecast for fictional locations
+function generateDate(dayNumber) {
+  const date = new Date(); // Get the current date
+  date.setDate(date.getDate() + dayNumber); // Add 'index' days to the current date
+
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayOfWeekIndex = date.getDay(); 
+  const dayOfWeek = daysOfWeek[dayOfWeekIndex]
+
+  return dayOfWeek;
 }
