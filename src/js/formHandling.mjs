@@ -37,16 +37,20 @@ async function handleFictionalLocationSubmit(e) {
     e.preventDefault();
 
     const weatherDisplayContainer = document.getElementById("weather-display-container");
-    const ficionalLocation = document.getElementById("dropdown").value;
+    const fictionalLocation = document.getElementById("dropdown").value;
 
-    const fictionalLocationData = eval(`${ficionalLocation.toLowerCase()}Data`);
+    let fictionalLocationData = null;
 
-    if (fictionalLocationData != null) {
-        weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-        console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
+    if (fictionalLocation.toLowerCase() === 'hoth') {
+        fictionalLocationData = hothData;
+    } else if (fictionalLocation.toLowerCase() === 'coruscant') {
+        fictionalLocationData = coruscantData;
+    } else if (fictionalLocation.toLowerCase() === 'tatooine') {
+        fictionalLocationData = tatooineData;
     }
+    
+    weatherDisplayContainer.innerHTML = weatherDisplayFictionalTemplate(fictionalLocationData);
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // Handles the event listeners for the forms
