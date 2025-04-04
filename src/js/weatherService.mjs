@@ -43,3 +43,11 @@ export async function getFiveDayForecast(locationKey) {
     const url = `${baseURLFiveDayForecast}${locationKey}?apikey=${apiKey}`;
     return await getData(url);
 }
+
+// Function to get Fictional Location data
+export async function getFictionalData(location) {
+    let fictionalURL = `/json/${location.toLowerCase()}.json`;
+    const fictionalData = await getData(fictionalURL)
+  
+    return fictionalData;
+}
