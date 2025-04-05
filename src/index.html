@@ -20,8 +20,8 @@
       <main id="main-container">
         <div id="weather-display-container" class="weather-display">
           <h1 id="filler-flag">*** Filler Data Until Search Is Made ***</h1>
-          <div id="current-day" class="forecast-day clear">
-            <h2 id="current-day-title">Today's Weather - Rexburg</h2>
+          <div id="current-day" class="forecast-day clear-skies">
+            <h2 id="current-day-title">Current Weather - Rexburg</h2>
             <p>Current Temperature: <span id="current-temp">68°F</span></p>
             <p>High: <span id="current-high">74°F</span></p>
             <p>Low: <span id="current-low">58°F</span></p>
@@ -31,51 +31,55 @@
           </div>
           <h2 id="five-day-title">5-Day Forecast</h2>
           <div id="forecast">
-            <div class="forecast-day clouds">
-              <p><span>Monday</span></p>
+            <div class="forecast-day cloudy">
+              <p class="five-day-dayname"><span>Monday</span></p>
               <div class="day-temp">
                 <p>High: <span>74°F</span></p>
                 <p>Low: <span>58°F</span></p>
               </div>
               <p><span>Cloudy</span></p>
             </div>
-            <div class="forecast-day clear">
-              <p><span>Tuesday</span></p>
+            <div class="forecast-day clear-skies">
+              <p class="five-day-dayname"><span>Tuesday</span></p>
               <div class="day-temp">
                 <p>High: <span>78°F</span></p>
                 <p>Low: <span>60°F</span></p>
               </div>
               <p><span>Sunny</span></p>
             </div>
-            <div class="forecast-day rain">
-              <p><span>Wednesday</span></p>
+            <div class="forecast-day rainy">
+              <p class="five-day-dayname"><span>Wednesday</span></p>
               <div class="day-temp">
                 <p>High: <span>68°F</span></p>
                 <p>Low: <span>50°F</span></p>
               </div>
               <p><span>Rainy</span></p>
             </div>
-            <div class="forecast-day dust">
-              <p><span>Thursday</span></p>
+            <div class="forecast-day thunderstorm">
+              <p class="five-day-dayname"><span>Thursday</span></p>
               <div class="day-temp">
                 <p>High: <span>72°F</span></p>
                 <p>Low: <span>55°F</span></p>
               </div>
-              <p><span>Dust</span></p>
+              <p><span>Thunderstorm</span></p>
             </div>
-            <div class="forecast-day snow">
-              <p><span>Friday</span></p>
+            <div class="forecast-day windy">
+              <p class="five-day-dayname"><span>Friday</span></p>
               <div class="day-temp">
                 <p>High: <span>70°F</span></p>
                 <p>Low: <span>58°F</span></p>
               </div>
-              <p><span>Snow</span></p>
+              <p><span>Windy</span></p>
             </div>
           </div>
         </div>
         <section id="search-interfaces">
           <div id="form-container">
-            <h3>Fill out Location Information</h3>
+            <div id="result-flag-container">
+              <h3 id="result-flag"></h3>
+              <h3 id="flag-close">X</h3>
+            </div>
+            <h3>Fill out Location Information: (United States Only)</h3>
             <form id="real-location-form">
               <label for="city">City:</label>
               <input id="cityName" type="text" id="city" name="city" required>

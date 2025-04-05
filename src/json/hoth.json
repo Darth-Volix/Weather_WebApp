@@ -4,7 +4,7 @@
     "temperature": "5",
     "high": "12",
     "low": "-3",
-    "condition": "Blizzard",
+    "condition": "Snow",
     "wind_speed": "35",
     "wind_direction": "NW"
   },
@@ -13,7 +13,7 @@
       "day": "Monday",
       "high": "10",
       "low": "2",
-      "condition": "Blizzard"
+      "condition": "Snow"
     },
     {
       "day": "Tuesday",
@@ -25,7 +25,7 @@
       "day": "Wednesday",
       "high": "9",
       "low": "1",
-      "condition": "Blizzard"
+      "condition": "Snow"
     },
     {
       "day": "Thursday",
@@ -37,7 +37,7 @@
       "day": "Friday",
       "high": "11",
       "low": "3",
-      "condition": "Blizzard"
+      "condition": "Snow"
     }
   ]
 }
