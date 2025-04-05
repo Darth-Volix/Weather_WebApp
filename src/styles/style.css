@@ -151,6 +151,32 @@ body {
     background-color: white;
 }
 
+#result-flag-container {
+    display: none;
+    color: white;
+    justify-content: space-around;
+    border-radius: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+#result-flag {
+    text-align: center;
+
+}
+
+#flag-close {
+    padding: 3px;
+    border: 2px solid white;
+}
+
+#flag-close:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    animation: grow 0.1s forwards;
+}
+
 #search-interfaces {
     display: flex;
     flex-direction: column;
@@ -194,6 +220,7 @@ button {
 
 button:hover {
     background-color: #0056b3;
+    animation: smaller-grow 0.1s forwards;
 }
 
 /* ====== FOOTER ====== */
@@ -212,6 +239,10 @@ footer a {
     color: white;
 }
 
+.link h4:hover {
+    animation: grow 0.1s forwards;
+}
+
 /* ====== RESPONSIVE DESIGN ====== */
 @media screen and (min-width: 800px) {
     #forecast {
@@ -224,5 +255,23 @@ footer a {
 
     #search-interfaces {
         flex-direction: row;
+    }
+}
+
+@keyframes grow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+}
+
+@keyframes smaller-grow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.02);
     }
 }

@@ -17,7 +17,15 @@ async function handleLocationSubmit(e) {
     const locationData = await getLocationData(postalCode);
     const locationKey = await getLocationKey(locationData, cityName, cityState);
 
+    const resultFlagContainer = document.getElementById('result-flag-container');
+    const resultFlag = document.getElementById('result-flag');
+
     if (locationKey != null) {
+        resultFlagContainer.style.display = 'flex'
+        resultFlag.innerText = 'Weather Information for Location Found';
+        resultFlagContainer.style.backgroundColor = 'green'
+
+        
         const currentWeather = await getCurrentWeather(locationKey);
         const fiveDayForecast = await getFiveDayForecast(locationKey);
 
@@ -28,7 +36,9 @@ async function handleLocationSubmit(e) {
         addToSessionStorage(cityName, cityState, postalCode);
         window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-        console.log("Data is null"); // adjust this later to add an alert that is displayed to the user.
+        resultFlagContainer.style.display = 'flex'
+        resultFlag.innerText = 'No Results. Please Try Again.';
+        resultFlagContainer.style.backgroundColor = 'red'
     }
 }
 
