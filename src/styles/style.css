@@ -1,9 +1,11 @@
+/* ====== GLOBAL STYLES ====== */
 body {
     margin: 0 auto;
     padding: 0;
     padding: 10px;
 }
 
+/* ====== MAIN CONTENT CONTAINER ====== */
 #content {
     margin: 0 auto;
     background-color: lightgray;
@@ -13,6 +15,7 @@ body {
     padding: 10px;
 }
 
+/* ====== HEADER & NAVIGATION ====== */
 #title-nav-bar {
     background-image: linear-gradient(to bottom, #004265, #002d4e);
     padding: 20px;
@@ -31,6 +34,7 @@ body {
     width: 75px;
 }
 
+/* ====== MAIN LAYOUT ====== */
 #main-container {
     display: flex;
     flex-direction: column;
@@ -43,13 +47,15 @@ body {
     text-align: center;
 }
 
+/* ====== CURRENT DAY WEATHER ====== */
 #current-day {
     justify-self: center;
     width: 50%;
 }
 
 #current-day-title {
-  text-align: center;
+    text-align: center;
+    text-decoration: underline;
 }
 
 .weather-display {
@@ -59,11 +65,20 @@ body {
     padding: 10px;
     width: 95%;
     max-width: 1000px;
+    font-weight: bold;
 }
 
+/* ====== FIVE-DAY FORECAST ====== */
 #five-day-title {
     text-align: center;
     text-decoration: underline;
+}
+
+.five-day-dayname {
+    text-decoration: underline;
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-align: center;
 }
 
 #forecast {
@@ -79,51 +94,53 @@ body {
     width: 50%;
 }
 
+/* ====== WEATHER CONDITIONS THEMES ====== */
 .clear-skies {
-    background-color: #87ceeb; /* Bright sky blue */
+    background-color: #87ceeb; 
     color: black;
 }
 
 .cloudy {
-    background-color: #b0c4de; /* Light steel blue */
+    background-color: #b0c4de; 
     color: black;
 }
 
 .foggy {
-    background-color: #d3d3d3; /* Light gray for mist */
+    background-color: #d3d3d3; 
     color: black;
 }
 
 .rainy {
-    background-color: #A1B5D4; /* Muted blue-gray */
+    background-color: #A1B5D4; 
     color: black;
 }
 
 .thunderstorm {
-    background-color: #324162; /* Deep stormy blue */
+    background-color: #324162; 
     color: white;
 }
 
 .snowy {
-    background-color: #eaf6f6; /* Icy white-blue */
+    background-color: #eaf6f6; 
     color: black;
 }
 
 .hot {
-    background-color: #FF8C00; /* Dark orange */
-    color: white;
+    background-color: #FF8C00; 
+    color: black;
 }
 
 .cold {
-    background-color: #4682B4; /* Steel blue */
+    background-color: #4682B4; 
     color: white;
 }
 
 .windy {
-    background-color: #B0C4DE; /* Same as cloudy for now */
+    background-color: #B0C4DE;
     color: black;
 }
 
+/* ====== FORM SECTION ====== */
 #form-container {
     width: auto;
     margin: 0 auto;
@@ -146,7 +163,6 @@ body {
     border: 2px solid black;
     background-color: white;
     border-radius: 30px;
-    
 }
 
 #recent-searches h3 {
@@ -180,6 +196,7 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* ====== FOOTER ====== */
 footer {
     background-image: linear-gradient(to bottom, #004265, #002d4e);
     padding: 20px;
@@ -195,6 +212,7 @@ footer a {
     color: white;
 }
 
+/* ====== RESPONSIVE DESIGN ====== */
 @media screen and (min-width: 800px) {
     #forecast {
         display: flex;
