@@ -4,7 +4,7 @@
     "temperature": "110",
     "high": "115",
     "low": "95",
-    "condition": "Sunny",
+    "condition": "Hot",
     "wind_speed": "15",
     "wind_direction": "S"
   },
@@ -13,31 +13,31 @@
       "day": "Monday",
       "high": "112",
       "low": "98",
-      "condition": "Sunny"
+      "condition": "Hot"
     },
     {
       "day": "Tuesday",
       "high": "115",
       "low": "100",
-      "condition": "Sunny"
+      "condition": "Hot"
     },
     {
       "day": "Wednesday",
       "high": "110",
       "low": "95",
-      "condition": "Sunny"
+      "condition": "Hot"
     },
     {
       "day": "Thursday",
       "high": "113",
       "low": "99",
-      "condition": "Sunny"
+      "condition": "Hot"
     },
     {
       "day": "Friday",
       "high": "114",
       "low": "97",
-      "condition": "Sunny"
+      "condition": "Hot"
     }
   ]
 }

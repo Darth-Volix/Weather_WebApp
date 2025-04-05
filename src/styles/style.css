@@ -79,70 +79,49 @@ body {
     width: 50%;
 }
 
+.clear-skies {
+    background-color: #87ceeb; /* Bright sky blue */
+    color: black;
+}
+
+.cloudy {
+    background-color: #b0c4de; /* Light steel blue */
+    color: black;
+}
+
+.foggy {
+    background-color: #d3d3d3; /* Light gray for mist */
+    color: black;
+}
+
+.rainy {
+    background-color: #A1B5D4; /* Muted blue-gray */
+    color: black;
+}
+
 .thunderstorm {
-    background-color: #324162; 
+    background-color: #324162; /* Deep stormy blue */
     color: white;
 }
 
-.drizzle {
-    background-color: #ACC8E5; 
-    color: #112A46;
+.snowy {
+    background-color: #eaf6f6; /* Icy white-blue */
+    color: black;
 }
 
-.rain {
-    background-color: #A1B5D4; 
-}
-
-.snow {
-    background-color: #eaf6f6; 
-}
-
-.clear {
-    background-color: #87ceeb; 
-}
-
-.clouds {
-    background-color: #b0c4de;
-}
-
-.mist {
-    background-color: #d3d3d3; 
-}
-
-.smoke {
-    background-color: #555555; 
+.hot {
+    background-color: #FF8C00; /* Dark orange */
     color: white;
 }
 
-.haze {
-    background-color: #B6B691; 
-}
-
-.dust {
-    background-color: #e1c16e; 
-}
-
-.fog {
-    background-color: #c0c0c0; 
-}
-
-.sand {
-    background-color: #deb887; 
-}
-
-.ash {
-    background-color: #424242; 
+.cold {
+    background-color: #4682B4; /* Steel blue */
     color: white;
 }
 
-.squall {
-    background-color: #2A4646;
-    color: white;
-}
-
-.tornado {
-    background-color: #4b4b4b; 
-    color: white;
+.windy {
+    background-color: #B0C4DE; /* Same as cloudy for now */
+    color: black;
 }
 
 #form-container {
