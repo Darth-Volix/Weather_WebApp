@@ -21,9 +21,9 @@ async function handleLocationSubmit(e) {
     const resultFlag = document.getElementById('result-flag');
 
     if (locationKey != null) {
-        resultFlagContainer.style.display = 'flex'
+        resultFlagContainer.style.display = 'flex';
         resultFlag.innerText = 'Weather Information for Location Found';
-        resultFlagContainer.style.backgroundColor = 'green'
+        resultFlagContainer.style.backgroundColor = 'green';
 
         
         const currentWeather = await getCurrentWeather(locationKey);
@@ -36,9 +36,9 @@ async function handleLocationSubmit(e) {
         addToSessionStorage(cityName, cityState, postalCode);
         window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-        resultFlagContainer.style.display = 'flex'
+        resultFlagContainer.style.display = 'flex';
         resultFlag.innerText = 'No Results. Please Try Again.';
-        resultFlagContainer.style.backgroundColor = 'red'
+        resultFlagContainer.style.backgroundColor = 'red';
     }
 }
 
@@ -63,17 +63,28 @@ async function handleFictionalLocationSubmit(e) {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Handle when user clicks close button on result flag
+function handleResultFlagClose(e) {
+    e.preventDefault();
+
+    const resultFlagContainer = document.getElementById("result-flag-container");
+    resultFlagContainer.style.display = "none";
+}
+
 // Handles the event listeners for the forms
 export function initializeFormHandling() {
     const realLocationForm = document.getElementById("real-location-form");
     const fictionalLocationForm = document.getElementById("fictional-location-form");
+    const resultFlagClose = document.getElementById("flag-close");
 
     // Remove event listeners to prevent memory leaking 
     realLocationForm.removeEventListener("submit", handleLocationSubmit);
     fictionalLocationForm.removeEventListener("submit", handleFictionalLocationSubmit);
+    resultFlagClose.removeEventListener("click", handleResultFlagClose);
     
 
     // Add event listeners
     realLocationForm.addEventListener("submit", handleLocationSubmit);
     fictionalLocationForm.addEventListener("submit", handleFictionalLocationSubmit);
+    resultFlagClose.addEventListener("click", handleResultFlagClose);
 }
